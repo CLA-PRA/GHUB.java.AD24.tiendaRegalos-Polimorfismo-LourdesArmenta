@@ -1,20 +1,17 @@
 
 package datos;
-import negocio.Vendible;
 
-public class Celular extends ProductoElectronico implements Vendible{
-    private int numCamaras;
-    private String sistemaOperativo;
-    private int capacidadAlmacenamiento;
-    private int ram;
-    private String tipoPantalla;
+//La clase Celular hereda de la clase ProductoElectronico
+public class Celular {
+   //atributos de la clase Celular
     final String familia = super.getFamilia();
 
     public Celular(String idProducto, String nombre, double precio, String descripcion, String familia
                     ,String marca, String modelo, String color, int garantia, String voltaje
                     ,int numCamaras, String sistemaOperativo, int capacidadAlmacenamiento, int ram, String tipoPantalla)
     {
-        super(idProducto, nombre, precio, descripcion, familia, marca, modelo, color, garantia, voltaje);
+        //invoque al constructor de la clase padre
+       
         this.numCamaras = numCamaras;
         this.sistemaOperativo = sistemaOperativo;
         this.capacidadAlmacenamiento = capacidadAlmacenamiento;
@@ -64,7 +61,7 @@ public class Celular extends ProductoElectronico implements Vendible{
 
     @Override
     public String getFamilia(){
-        return super.getFamilia();
+        //coloque el codigo para obtener la Familia de la clase padre
     }
 
     //sobreescritura del metodo obtenerDetalles de la clase ProductoElectronico y
@@ -77,12 +74,7 @@ public class Celular extends ProductoElectronico implements Vendible{
     @Override
     //se le puede aplicar un descuento de hasta el 20%
     public boolean aplicarDescuento(double porcentaje) {
-        if (super.aplicarDescuento(porcentaje)){
-           this.setPrecio(this.getPrecio()-this.getPrecio()*(porcentaje/100));
-           return true;
-        }
-        else
-            return false;  
+        //coloque el código faltante  
          
     }
 
@@ -95,20 +87,11 @@ public class Celular extends ProductoElectronico implements Vendible{
                                    tipoPantalla;
     }
 
-    @Override
-    public double calcularPrecio() {
-        return 0;
-    }
-
-    @Override
-    public double calcularPrecio(double porcentaje) {
-
-        return 0;
-    }
+   
 
     @Override
     public boolean esVendible() {
-        return true; //es vendible
+        //coloque el código faltante ya qie un celular es vendible
     }
     
     

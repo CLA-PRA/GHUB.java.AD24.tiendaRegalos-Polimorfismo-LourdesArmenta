@@ -18,7 +18,8 @@ public class Menu {
 
     public Menu() {
         ProductoDAO productoDAO = new ProductoDAO(100); // Capacidad del inventario
-        this.tiendaService = new TiendaDeRegalosService(productoDAO);
+        //crear una instancia de la tienda de tipo tiendaService  mandando el productoDAO como parametro
+       
     }
 
     public void iniciar() {
@@ -87,7 +88,8 @@ public class Menu {
     private void mostrarFamiliaProducto(Scanner scanner) {
         System.out.print("Ingrese el nombre de la familia de producto: ");
         String familia = scanner.nextLine();
-        tiendaService.mostrarFamiliaProducto(familia);
+        //invoque el metodo mostrarFamiliaProducto de la tiendaService
+       
     }
 
     private void captura_productos(Scanner scanner){
@@ -179,12 +181,13 @@ public class Menu {
                 captura_literario(scanner); 
                 //Datos específicos del libro
                 System.out.print("Ingrese el ISBN: ");
-                String isbn = scanner.nextLine();
-                familia = tiendaService.obtenerFamiliaProductoLiterario();
+                String isbn = scanner.nextLine(); 
+                //Obtener la familia de producto literario a través del método obtenerFamiliaProductoLiterario de tiendaService
+                familia = //coloque el código para obtener la familia de producto literario
                 
 
-                tiendaService.agregarLibro(idProducto, nombre, precio, descripcion, familia,autor, editorial, 
-                                            anioPublicacion, genero, numeroPaginas, isbn);
+                //Agregar el libro a través del método agregarLibro de tiendaService
+                
                 
                 System.out.println("Libro agregado exitosamente."); 
                 break;
@@ -197,11 +200,11 @@ public class Menu {
                 String resolucion = scanner.nextLine();
                 System.out.print("Ingrese el tipo de pantalla (LCD,LED,OLED,etc): ");
                 String tipoPantalla = scanner.nextLine();
-                familia = tiendaService.obtenerFamiliaProductoElectronico();
+                //Obtener la familia de producto electrónico a través del método obtenerFamiliaProductoElectronico de tiendaService
+                
             
-                tiendaService.agregarTelevision(idProducto, nombre, precio, descripcion,familia
-                                                , marca,  modelo, color, garantia,  voltaje
-                                                ,tamanio,  resolucion, tipoPantalla);
+                //Agregar el televisor a través del método agregarTelevision de tiendaService
+                
                
                 System.out.println("Television agregado exitosamente."); 
                 break;
@@ -222,13 +225,13 @@ public class Menu {
                 System.out.print("Ingrese el tipo de pantalla (LCD,IPS,OLED y AMOLED): ");
                 String tipoPantallaCelular = scanner.nextLine();
 
-                familia= tiendaService.obtenerFamiliaProductoElectronico();
+                //Obtener la familia de producto electrónico a través del método obtenerFamiliaProductoElectronico de tiendaService
 
 
-                tiendaService.agregarCelular(idProducto, nombre, precio, descripcion,familia
-                                            ,marca, modelo, color, garantia, voltaje
-                                            ,numCamaras, sistemaOperativo, capacidadAlmacenamiento
-                                            ,ram, tipoPantallaCelular);
+                //Agregar el celular a través del método agregarCelular de tiendaService
+
+
+               
                 System.out.println("Celular agregado exitosamente.");
                 break;
             case 4://Calculadora
@@ -237,10 +240,11 @@ public class Menu {
                 System.out.print("Ingrese el tipo de calculadora (científicas estándar,programables, etc.): ");
                 String tipoCalculadora = scanner.nextLine();
 
-                familia = tiendaService.obtenerFamiliaProductoElectronico();
-                tiendaService.agregarCalculadora(idProducto, nombre, precio, descripcion,familia
-                                                ,marca, modelo, color, garantia
-                                                ,voltaje ,tipoCalculadora);
+                //Obtener la familia de producto electrónico a través del método obtenerFamiliaProductoElectronico de tiendaService
+
+
+                //Agregar la calculadora a través del método agregarCalculadora de tiendaService
+               
                 System.out.println("Calculadora agregada exitosamente.");
                 break;
             case 5://Licuadora
@@ -253,10 +257,10 @@ public class Menu {
                 int capacidad = scanner.nextInt();
                 scanner.nextLine(); // Consumir la nueva línea
 
-                familia = tiendaService.obtenerFamiliaProductoElectrodomestico();
-                tiendaService.agregarLicuadora(idProducto, nombre, precio, descripcion, familia, 
-                                                marca, modelo, color, 
-                                                garantia, voltaje, potencia, capacidad);
+                //Obtener la familia de producto electrónico a través del método obtenerFamiliaProductoElectronico de tiendaService
+               
+                //Agregar la licuadora a través del método agregarLicuadora de tiendaService
+                
                 System.out.println("Licuadora agregada exitosamente.");
                 break;
             case 6://Tostadora
@@ -266,10 +270,10 @@ public class Menu {
                 int numRanuras = scanner.nextInt();
                 scanner.nextLine(); // Consumir la nueva línea
 
-                familia = tiendaService.obtenerFamiliaProductoElectrodomestico();
-                tiendaService.agregarTostadora(idProducto, nombre, precio,  descripcion,familia
-                                                ,marca, modelo, color, garantia, voltaje
-                                                ,numRanuras);
+                //Obtener la familia de producto electrónico a través del método obtenerFamiliaProductoElectronico de tiendaService
+
+                //Agregar la tostadora a través del método agregarTostadora de tiendaService
+                
                 System.out.println("Tostadora agregada exitosamente.");
                 break;
             case 7://Promocionales
@@ -279,9 +283,12 @@ public class Menu {
                 String talla = scanner.nextLine();
                 System.out.print("ingrese color del producto: ");
                 String colorPromocional = scanner.nextLine();
-                familia = tiendaService.obtenerFamiliaProductoPromocional();
-                tiendaService.agregarProductoPromocional(idProducto, nombre, precio, descripcion, 
-                                                        familia, talla, colorPromocional);
+
+                //obtener la familia de producto promocional a través del método obtenerFamiliaProductoPromocional de tiendaService
+
+               //Agregar el producto promocional a través del método agregarProductoPromocional de tiendaService
+
+                
                 System.out.println("Producto promocional agregado exitosamente.");
                 break;
             default:
@@ -294,41 +301,58 @@ public class Menu {
     private void eliminarProducto(Scanner scanner) {
         System.out.print("Ingrese el nombre del producto a eliminar: ");
         String nombre = scanner.nextLine();
-        tiendaService.eliminarProducto(nombre);
+        //invoque el metodo eliminarProducto de la tiendaService
+        
     }
 
     private void listarProductos() {
-        tiendaService.listarProductos();
+        //invoque el metodo listarProductos de la tiendaService
+        
     }
 
     private void venderProducto(Scanner scanner) {
         System.out.print("Ingrese el nombre del producto a vender: ");
-        String nombre = scanner.nextLine();
-        tiendaService.venderProducto(nombre);
+        //Leer el nombre del producto a vender
+        
+
+        //invoque el metodo venderProducto de la tiendaService
+       
     }
 
     private void aplicarDescuento(Scanner scanner) {
         System.out.print("Ingrese el nombre del producto a aplicar descuento: ");
-        String nombre = scanner.nextLine();
-        System.out.print("Ingrese el porcentaje de descuento: ");
-        double porcentaje = scanner.nextDouble();
-        scanner.nextLine(); // Consumir la nueva línea
 
-        tiendaService.aplicarDescuento(nombre, porcentaje);
+        //Leer el nombre del producto a aplicar descuento
+        
+        System.out.print("Ingrese el porcentaje de descuento: ");
+
+        //Leer el porcentaje de descuento
+        
+        // Consumir la nueva línea
+
+        //invoque el metodo aplicarDescuento de la tiendaService
+       
     }
 
     private void actualizarPrecio(Scanner scanner) {
         System.out.print("Ingrese el nombre del producto a actualizar: ");
-        String nombre = scanner.nextLine();
+        //Leer el nombre del producto a actualizar
+        
+        //
         System.out.print("Ingrese el nuevo precio del producto: ");
-        double nuevoPrecio = scanner.nextDouble();
-        scanner.nextLine(); // Consumir la nueva línea
+        //Leer el nuevo precio del producto
+        
+        // Consumir la nueva línea
+        
 
-        tiendaService.actualizarPrecio(nombre, nuevoPrecio);
+        //invoque el metodo actualizarPrecio de la tiendaService
+        
     }
 
     private void calcularValorTotalProductos() {
-        double valorTotal = tiendaService.calcularValorTotalProductos();
-        System.out.println("Valor total de los productos en inventario: $" + valorTotal);
+        //invoque el metodo calcularValorTotalProductos de la tiendaService
+        
+        //Mostrar el valor total de los productos en inventario
+       
     }
 }

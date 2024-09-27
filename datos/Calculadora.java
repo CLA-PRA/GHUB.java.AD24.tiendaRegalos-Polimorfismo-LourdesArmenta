@@ -1,9 +1,9 @@
 package datos;
 
-
-public class Calculadora extends ProductoElectronico  {
+//La clase Calculadora hereda de la clase ProductoElectronico
+public class Calculadora   {
     private String tipo;
-    final String familia = super.getFamilia();
+    final String familia = //coloque el codigo para obtener la Familia de la clase padre
 
     public Calculadora(String idProducto, String nombre, double precio, String descripcion, String familia
                        ,String marca, String modelo, String color, int garantia, 
@@ -20,10 +20,10 @@ public class Calculadora extends ProductoElectronico  {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
-    //metodo getFamilia sobreescrito de la clase ProductoElectronico
+    //metodo getFamilia sobreescrito de la clase ProductoElectronico pra obtener la familia
     @Override
     public String getFamilia(){
-        return super.getFamilia();
+        
     }
 
     //sobreescritura del metodo obtenerDetalles de la clase ProductoElectronico y
@@ -33,14 +33,10 @@ public class Calculadora extends ProductoElectronico  {
         return super.obtenerDetalles()+"Calculadora [tipo=" + tipo + "]";
     }
 
+    //sobreescritura del metodo aplicarDescuento de la clase ProductoElectronico
     @Override
     public boolean aplicarDescuento(double porcentaje) {
-        if (super.aplicarDescuento(porcentaje)){
-           this.setPrecio(this.getPrecio()-this.getPrecio()*(porcentaje/100));
-           return true;
-        }
-        else
-            return false;  
+        
          
     }
 
