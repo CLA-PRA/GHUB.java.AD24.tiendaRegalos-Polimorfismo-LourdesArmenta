@@ -22,7 +22,8 @@ public class Inventario{
 
     public void agregarProducto(Producto producto) {
         if (contador < productos.length) {
-            productos[contador++] = producto;
+            //productos[contador] = producto;
+            
         } else {
             System.out.println("Inventario lleno. No se puede agregar más productos.");
         }
@@ -30,57 +31,22 @@ public class Inventario{
 
     public boolean eliminarProducto(String nombre) {
         
-        for (int i = 0; i < contador; i++) {
-            
-            if (productos[i].getNombre().equals(nombre)) {
-               
-                if (i < contador - 1) {
-                    
-                    for (int j = i; j < contador - 1; j++) {
-                        productos[j] = productos[j + 1];
-                    }
-                }else{
-                    productos[i] = null;
-                }
-                contador--;
-                
-                return true;
-            }
-        }
-        return false;
+        //coloque el código faltante para eliminar un producto por nombre
+        //retorne true si se elimina el producto y false en caso contrario
             
     }
 
     public boolean eliminarProducto(Producto producto) {
-        for (int i = 0; i < contador; i++) {
-            if (productos[i].equals(producto)) {
-                for (int j = i; j < contador - 1; j++) {
-                    productos[j] = productos[j + 1];
-                }    
-                contador--;
-                //break;
-                return true;
-            }
-           
-        }
-        return false;
+        //coloque el código faltante para eliminar un producto por objeto
+        //retorne true si se elimina el producto y false en caso contrario
     }
 
     public Producto buscarProducto(String nombre) {
-        for (int i = 0; i < contador; i++) {
-            if (productos[i].getNombre().equals(nombre)) {
-                return productos[i];
-            }
-        }
-        return null;
+        //coloque el código faltante para buscar un producto por nombre
     }
 
     public double calcularValorTotalProductos() {
-        double total = 0;
-        for (int i = 0; i < contador; i++) {
-            total += productos[i].getPrecio();
-        }
-        return total;
+        //coloque el código faltante para calcular el valor total de los productos
     }
 
     public void aplicarDescuentoATodos(double porcentaje) {

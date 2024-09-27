@@ -1,6 +1,7 @@
 package datos;
 
-public abstract class ProductoElectroDomestico extends Producto{
+//La clase ProductoElectroDomestico es una clase abstracta que hereda de la clase Producto
+public abstract class ProductoElectroDomestico {
     private String marca;
     private String modelo;
     private String color;
@@ -61,6 +62,7 @@ public abstract class ProductoElectroDomestico extends Producto{
     }
 
     //a un producto electrodomestico se le puede aplicar un descuento de hasta el 50%
+    //aplica un descuento al precio del producto
     @Override
     public boolean aplicarDescuento(double porcentaje) {
         if (porcentaje > 0 && porcentaje <=50)

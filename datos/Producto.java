@@ -1,5 +1,6 @@
 package datos;
 import negocio.Vendible;
+//La clase Producto es una clase abstracta que implementa la interfaz Vendible
 public abstract class Producto implements Vendible{
     private String idProducto;
     private String nombre;
