@@ -376,6 +376,29 @@ classDiagram
 ```
 [Referencia-Mermaid](https://mermaid.js.org/syntax/classDiagram.html)
 
+## Diagrama de clases
+[Editor en línea](https://mermaid.live/)
+```mermaid
+---
+title: Relaciones entre clases
+---
+classDiagram
+    
+    TiendaDeRegalos "1" --> "0..*" Producto
+    TiendaDeRegalos "1" *-- "1" Inventario : contiene
+    Producto "0..*" -- "1..*" Proveedor : suministrado por
+    Producto <|-- Libro
+    Producto <|-- Televisión
+    Producto <|-- Licuadora
+    Producto <|-- CamisetaPromocional
+    Producto <|-- ProductoPromocional
+    Producto <|-- ProductoElectronico
+    Producto <|-- ProductoLiterario
+
+
+```
+[Referencia-Mermaid](https://mermaid.js.org/syntax/classDiagram.html)
+
 ## Diagrama de clases UML con draw.io
 El repositorio está configurado para crear Diagramas de clases UML con ```draw.io```. Para usarlo simplemente agrega un archivo con extensión ```.drawio.png```, das doble clic sobre el mismo y se activará el editor ```draw.io``` incrustado en ```VSCode``` para edición. Asegúrate de agregar las formas UML en el menú de formas del lado izquierdo (opción ```+Más formas```).
 
