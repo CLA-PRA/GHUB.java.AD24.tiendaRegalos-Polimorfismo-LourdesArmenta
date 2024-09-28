@@ -2,21 +2,22 @@ package datos;
 
 public class Inventario{
     
-    private Producto[] productos;
+    //crear un arreglo de productos
+   
     private int contador;
 
     public Inventario() {
         this.productos = new Producto[10];
-        this.contador = 0;
+        //inicializar el contador en 0
     }
 
     public Inventario(int capacidad) {
         this.productos = new Producto[capacidad];
-        this.contador = 0;
+       //inicializar el contador en 0
     }
 
     public Producto[] getProductos() {
-        return productos;
+        //retornar el arreglo de productos
     }
 
 

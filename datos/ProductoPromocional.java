@@ -11,45 +11,22 @@ public class ProductoPromocional extends Producto {
         return "Producto Promocional";
     }
 
+    //sobreescritura la interfaz Vendible
+    //todos los productos promocionales no son vendibles
+    
 
-    @Override
-    public boolean esVendible() {
-        return false; // Este producto no es vendible al público
-    }
-
-    @Override
-    public double calcularPrecio() {
-        return 0;
-    }
-
-    // Calcula el precio con un descuento valido
-    @Override
-    public double calcularPrecio(double porcentaje) {
-        return 0;
-        
-    }
+    
 
    
     //a un producto promocional se le puede aplicar un descuento de hasta el 100%
-    @Override
-    public boolean aplicarDescuento(double porcentaje) {
-        if (porcentaje > 0 && porcentaje <= 100) {
-            
-            return true;
-        }
-        return false;
-    }
+    //sobre
+    
 
+    //SOBREESCRIBIR EL METODO obtenerDetalles
+   
 
-    @Override
-    public String obtenerDetalles() {
-        return "Nombre: " + getNombre() + ", Precio: " + getPrecio() + ", Descripción: " + getDescripcion();
-    }
-
-    @Override
-    public String toString() {
-        return "ProductoPromocional [idProducto=" + getIdProducto() + ", nombre=" + getNombre() + ", precio=" + getPrecio() + ", descripcion=" + getDescripcion() + "]";
-    }
+    //SOBREESCRIBIR EL METODO toString
+   
 
     
 

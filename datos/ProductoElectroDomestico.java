@@ -2,64 +2,33 @@ package datos;
 
 //La clase ProductoElectroDomestico es una clase abstracta que hereda de la clase Producto
 public abstract class ProductoElectroDomestico {
-    private String marca;
-    private String modelo;
-    private String color;
-    private int garantia;
-    private String voltaje;
+    //atributos de la clase ProductoElectroDomestico
+    
+    //utilizamos una constante para definir la familia de la clase
+    //final String familia = super.getFamilia();
     final String familia = "ProductoElectrodomestico";
 
     public ProductoElectroDomestico() {
-        super();
+        //invocamos al constructor de la clase padre
+        
     }
     
     public ProductoElectroDomestico(String idProducto, String nombre, double precio
                         ,String descripcion,String familia
                         ,String marca, String modelo, String color, int garantia, String voltaje) {
-        super(idProducto, nombre, precio, descripcion,familia);
-        this.marca = marca;
-        this.modelo = modelo;  
-        this.color = color;
-        this.garantia = garantia;
-        this.voltaje = voltaje;
+        
+        //invocamos al constructor de la clase padre
+        //super(idProducto, nombre, precio, descripcion, familia);
+
+        
 
     }
-    public String getMarca() {
-        return marca;
-    }
-    public void setMarca(String marca) {
-        this.marca = marca;
-    }
-    public String getModelo() {
-        return modelo;
-    }
-    public void setModelo(String modelo) {
-        this.modelo = modelo;
-    }
-    public String getColor() {
-        return color;
-    }
-    public void setColor(String color) {
-        this.color = color;
-    }
-    public int getGarantia() {
-        return garantia;
-    }
-    public void setGarantia(int garantia) {
-        this.garantia = garantia;
-    }
-    public String getVoltaje() {
-        return voltaje;
-    }
-    public void setVoltaje(String voltaje) {
-        this.voltaje = voltaje;
-    }
+    //metodos get y set de la clase ProductoElectroDomestico
+   
+    
 
-    @Override
-    public String obtenerDetalles() {
-        return super.toString()+", Color=" + color + ", garantia=" + garantia + ", marca=" + marca + ", modelo=" + modelo
-                + ", voltaje=" + voltaje + "]";
-    }
+    //sobreescritura del metodo obtenerDetalles
+    
 
     //a un producto electrodomestico se le puede aplicar un descuento de hasta el 50%
     //aplica un descuento al precio del producto
@@ -73,21 +42,10 @@ public abstract class ProductoElectroDomestico {
     }
     
 
-    @Override
-    public double calcularPrecio() {
-        return 0;
-    }
-
-    @Override
-    public double calcularPrecio(double porcentaje) {
-        return 0;
-    }
-
-    @Override
-    public boolean esVendible() {
-    
-        return true;
-    }
+    //metodo que retorna si un producto es vendible
+    //todos los productos electrodomesticos son vendibles
+    //implemente el metodo de la interfaz Vendible
+   
 
     public String getFamilia(){
         return "ProductoElectrodomestico";

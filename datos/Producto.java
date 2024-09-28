@@ -67,6 +67,9 @@ public abstract class Producto implements Vendible{
     }
 
     
+    //métodos abstractos
+    //deben ser implementados en las clases hijas
+    
     public abstract String obtenerDetalles();
 
     public abstract boolean aplicarDescuento(double porcentaje);
