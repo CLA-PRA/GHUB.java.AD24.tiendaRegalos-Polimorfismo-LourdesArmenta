@@ -1,5 +1,6 @@
 # Proyecto - Dando vida a los objetos de una tienda de regalos para la gestión de inventarios
 ## Este es un cambio que hice en el repositoria CLA-PRA
+## Este es OTRO cambio que hice en el repositorio CLA-PRA
 
 ## Objetivo General:
 Introducirte de manera práctica en los conceptos fundamentales de la programación orientada a objetos (POO).
